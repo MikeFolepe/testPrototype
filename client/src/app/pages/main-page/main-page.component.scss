@@ -1,0 +1,31 @@
+p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.tab-group {
+    padding: 20px 0;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    padding: 0 0 0 10px;
+}
+
+.radio-button {
+    margin: 8px;
+}

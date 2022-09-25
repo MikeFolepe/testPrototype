@@ -1,0 +1,159 @@
+<app-background [isDark]="false"></app-background>
+<div id="title">
+    <div id="typing">Page admin</div>
+</div>
+<div id="wrapper">
+    <div id="dictionaries" class="window">
+        <div class="fake-menu">
+            <div class="fake-buttons fake-close"></div>
+            <div class="fake-buttons fake-minimize"></div>
+            <div class="fake-buttons fake-zoom"></div>
+        </div>
+        <h2>
+            Dictionnaires
+            <hr />
+        </h2>
+        <div class="window-content">
+            <div class="accordion-buttons">
+                <button mat-button (click)="accordion.openAll()">Tout développer</button>
+                <button mat-button (click)="accordion.closeAll()">Tout réduire</button>
+            </div>
+            <div class="dictionaries-container">
+                <mat-accordion multi>
+                    <mat-expansion-panel *ngFor="let dictionary of adminService.dictionaries">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{ dictionary.title }}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                {{ dictionary.description }}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <button mat-icon-button id="deleteIcon" (click)="adminService.deleteDictionary(dictionary)">
+                            <mat-icon color="warn">delete_forever</mat-icon>
+                        </button>
+                        <button mat-icon-button id="editIcon" (click)="adminService.editDictionary(dictionary)">
+                            <mat-icon>create</mat-icon>
+                        </button>
+                        <button mat-icon-button id="editIcon" (click)="adminService.downloadDictionary(dictionary)">
+                            <mat-icon>get_app</mat-icon>
+                        </button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div class="center upload">
+                <button mat-raised-button [ngClass]="{ selectedFileButton: adminService.file, fill: !adminService.file }" (click)="fileInput.click()">
+                    <div class="content">
+                        <p *ngIf="adminService.file === null" class="text">Téléverser un dictionnaire</p>
+                        <p *ngIf="adminService.file === null" class="text description">(fichier .json seulement)</p>
+                        <p *ngIf="adminService.file !== null" class="file">{{ adminService.file.name }}</p>
+                    </div>
+                </button>
+                <input hidden type="file" accept=".json" #fileInput (change)="adminService.onFileInput(fileInput.files)" />
+
+                <button
+                    mat-fab
+                    color=""
+                    [disabled]="!adminService.file"
+                    [ngClass]="{ add: adminService.file, transparentAdd: !adminService.file }"
+                    type="submit"
+                    (click)="onSubmitDictionary()"
+                >
+                    <mat-icon>cloud_upload</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="alert" *ngIf="adminService.errorHandler.serverError.length">
+            {{ adminService.errorHandler.serverError }}
+        </div>
+    </div>
+
+    <div id="right-bar">
+        <div id="virtual-names" class="window">
+            <div class="fake-menu">
+                <div class="fake-buttons fake-close"></div>
+                <div class="fake-buttons fake-minimize"></div>
+                <div class="fake-buttons fake-zoom"></div>
+            </div>
+            <h2>
+                Noms des joueurs virtuels
+                <hr />
+            </h2>
+            <div class="window-content">
+                <div class="list">
+                    <div class="beginner">
+                        <p class="name-title">Noms débutants</p>
+                        <hr />
+                        <div class="name-container">
+                            <div class="item" *ngFor="let aiBeginner of adminService.aiBeginner">
+                                <p class="ai-name">{{ aiBeginner.aiName }}</p>
+                                <div class="icons">
+                                    <button mat-icon-button id="deleteIcon" (click)="adminService.deleteAiPlayer(aiBeginner, 0)">
+                                        <mat-icon color="warn">delete_forever</mat-icon>
+                                    </button>
+                                    <button
+                                        mat-icon-button
+                                        id="editIcon"
+                                        (click)="adminService.addAiToDatabase(0, false, aiBeginner._id, aiBeginner.isDefault)"
+                                    >
+                                        <mat-icon>create</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <button mat-mini-fab id="add" color="" (click)="adminService.addAiToDatabase(0, true)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="expert">
+                        <p class="name-title">Noms experts</p>
+                        <hr />
+                        <div class="name-container">
+                            <div class="item" *ngFor="let aiExpert of adminService.aiExpert">
+                                <p class="ai-name">{{ aiExpert.aiName }}</p>
+                                <span class="icons">
+                                    <button mat-icon-button id="deleteIcon" (click)="adminService.deleteAiPlayer(aiExpert, 1)">
+                                        <mat-icon color="warn">delete_forever</mat-icon>
+                                    </button>
+                                    <button
+                                        mat-icon-button
+                                        id="editIcon"
+                                        (click)="adminService.addAiToDatabase(1, false, aiExpert._id, aiExpert.isDefault)"
+                                    >
+                                        <mat-icon>create</mat-icon>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <button mat-mini-fab id="add" color="" (click)="adminService.addAiToDatabase(1, true)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="reset">
+            <div class="delete-confirm">
+                <button
+                    mat-raised-button
+                    color="warn"
+                    (click)="isResetConfirmation = true"
+                    (clickOutside)="cancelReset()"
+                    [disabled]="isResetConfirmation"
+                    [ngClass]="{ delete: true, confirm: isResetConfirmation }"
+                >
+                    <mat-icon>{{ isResetConfirmation ? 'warning' : 'restore' }}</mat-icon>
+                    <span>{{ isResetConfirmation ? 'Confirmer?' : 'Réinitialiser' }}</span>
+                </button>
+                <button mat-raised-button class="yes" (click)="adminService.resetData()"><span>Oui</span></button>
+                <button mat-raised-button class="no"><span>Annuler</span></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div *ngIf="this.gameSettingsService.gameType === 1" id="objectives-container">
+    <h2>Objectifs</h2>
+    <h3>Privés</h3>
+    <div class="objective">
+        <div class="score">{{ objectives[1][0].score }}</div>
+        <div class="description">{{ objectives[1][0].name }}</div>
+        <div class="checked" *ngIf="objectives[1][0].isCompleted">&#10003;</div>
+        <div
+            class="timer"
+            *ngIf="objectives[1][0].id === 3 && !objectives[1][0].isCompleted"
+            [ngClass]="{ failed: objectives[1][0].id === 3 && objectivesService.activeTimeRemaining[0] === 0 }"
+        >
+            {{
+                objectivesService.activeTimeRemaining[0] > 9
+                    ? objectivesService.activeTimeRemaining[0]
+                    : '0' + objectivesService.activeTimeRemaining[0]
+            }}
+        </div>
+    </div>
+
+    <div class="objective" [ngClass]="{ fade: objectives[1][1].isCompleted, invisible: !objectives[1][1].isCompleted }">
+        <div class="score">{{ objectives[1][1].score }}</div>
+        <div class="description">{{ objectives[1][1].name }}</div>
+        <div class="checked" [ngClass]="{ visible: objectives[1][1].isCompleted }">
+            &#10003;
+            <p>Par : {{ gameSettingsService.gameSettings.playersNames[1] }}</p>
+        </div>
+    </div>
+
+    <h3>Publics</h3>
+    <div class="objective" *ngFor="let objective of objectives[0]; let i = index">
+        <div class="score">{{ objective.score }}</div>
+        <div class="description">{{ objective.name }}</div>
+        <div class="checked" *ngIf="objective.isCompleted">&#10003;</div>
+        <div
+            class="timer"
+            *ngIf="objective.id === 3 && !objective.isCompleted"
+            [ngClass]="{ failed: objective.id === 3 && objectivesService.activeTimeRemaining[0] === 0 }"
+        >
+            {{
+                objectivesService.activeTimeRemaining[0] > 9
+                    ? objectivesService.activeTimeRemaining[0]
+                    : '0' + objectivesService.activeTimeRemaining[0]
+            }}
+        </div>
+    </div>
+</div>

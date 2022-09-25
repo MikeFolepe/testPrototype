@@ -1,0 +1,11 @@
+<div class="container not-selectionnable">
+    <label>Taille de police : {{ fontSize }} px</label>
+    <div class="button-container">
+        <button mat-mini-fab color="white" (click)="decrement()" title="smaller">
+            <mat-icon>exposure_neg_1</mat-icon>
+        </button>
+        <button mat-mini-fab color="accent" (click)="increment()" title="bigger">
+            <mat-icon>exposure_plus_1</mat-icon>
+        </button>
+    </div>
+</div>

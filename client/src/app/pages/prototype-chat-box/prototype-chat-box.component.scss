@@ -1,0 +1,76 @@
+.chat-box {
+    border-radius: 6px;
+    background-image: linear-gradient(0deg, #000000 25%, #005634 25%, #005634 50%, #000000 50%, #000000 75%, #005634 75%, #005634 100%);
+    background-size: 4px 4px;
+    color: white;
+    font: 1.3rem Inconsolata, monospace;
+    text-shadow: 0 0 5px #c8c8c8;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    margin-bottom: 0px;
+    padding: 10px 10px;
+    font-size: larger;
+}
+
+::selection {
+    color: black;
+    background-color: white;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+#list-display {
+    margin-left: 10px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.display {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    white-space: normal;
+    font-size: 16px;
+    flex-grow: 1;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+input[type='text'] {
+    font-size: 16px;
+    background-color: transparent;
+    caret-color: white;
+    color: white;
+    padding: 15px 15px;
+    border: 2px black;
+}
+
+input[type='text']:focus {
+    outline: none;
+}
+
+.playerStyle {
+    color: #00ff07;
+}
+
+.opponentStyle {
+    color: #eeff00;
+}
+
+.systemStyle {
+    color: #00edff;
+}
+
+.errorStyle {
+    color: #ff0000;
+}

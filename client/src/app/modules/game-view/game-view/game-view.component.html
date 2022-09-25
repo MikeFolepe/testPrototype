@@ -1,0 +1,54 @@
+<div id="container">
+    <div id="side-bar">
+        <app-information-panel id="information-panel"></app-information-panel>
+        <div id="buttons">
+            <button
+                mat-raised-button
+                color="primary"
+                id="play-button"
+                [disabled]="!this.boardHandlerService.word.length"
+                (click)="this.boardHandlerService.confirmPlacement()"
+            >
+                Jouer
+            </button>
+            <div id="wrapper">
+                <button
+                    mat-raised-button
+                    color="primary"
+                    id="regular-button-1"
+                    [disabled]="!this.skipTurnService.isTurn || this.skipTurnService.shouldNotBeDisplayed"
+                    (click)="this.chatBoxService.sendPlayerMessage('!passer')"
+                >
+                    Passer son tour
+                </button>
+                <div *ngIf="gameSettingsService.isSoloMode">
+                    <button mat-raised-button color="warn" id="regular-button-2" (click)="leaveGame()" routerLink="/home">
+                        {{ endGameService.isEndGame ? 'Quitter' : 'Abandonner' }}
+                    </button>
+                </div>
+                <div *ngIf="!endGameService.isEndGame && !gameSettingsService.isSoloMode && !giveUpHandlerService.isGivenUp">
+                    <button mat-raised-button color="warn" id="regular-button-3" (click)="confirmGiveUpGame()">Abandonner</button>
+                </div>
+                <div *ngIf="endGameService.isEndGame && !gameSettingsService.isSoloMode && !giveUpHandlerService.isGivenUp">
+                    <button
+                        mat-raised-button
+                        color="warn"
+                        id="regular-button-4"
+                        (click)="this.clientSocketService.socket.emit('deleteGame', this.clientSocketService.roomId); leaveGame()"
+                        routerLink="/home"
+                    >
+                        Quitter
+                    </button>
+                </div>
+            </div>
+            <app-font-size id="font-size" [fontSize]="fontSize" (sizeChange)="handleFontSizeEvent($event)"></app-font-size>
+        </div>
+    </div>
+    <app-scrabble-board id="scrabble-board" tabindex="0"></app-scrabble-board>
+    <app-letter-easel id="letter-easel"></app-letter-easel>
+    <div id="chatbox">
+        <app-chatbox></app-chatbox>
+        <app-objectives></app-objectives>
+    </div>
+</div>
+<app-background [isDark]="!skipTurnService.isTurn"></app-background>

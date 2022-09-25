@@ -1,0 +1,68 @@
+#paginator {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#progress-bar-box {
+    width: 30%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10%;
+    margin: auto auto;
+    background-color: linen;
+    flex-direction: column;
+}
+
+#progress-bar-box p {
+    text-align: center;
+    font-size: x-large;
+    margin-bottom: 3em;
+}
+
+#buttons {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    grid-gap: 1em;
+    gap: 1em;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 45%;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.warning {
+    color: red;
+}
+
+.error-message {
+    font-size: x-large;
+    text-align: center;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}

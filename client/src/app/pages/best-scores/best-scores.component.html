@@ -1,0 +1,332 @@
+<h1 class="title">Meilleurs scores</h1>
+<div id="wrapper">
+    <div id="dictionaries" class="window">
+        <div class="fake-menu">
+            <div class="fake-buttons fake-close"></div>
+            <div class="fake-buttons fake-minimize"></div>
+            <div class="fake-buttons fake-zoom"></div>
+        </div>
+        <h2>
+            Mode classique
+            <hr />
+        </h2>
+        <div class="window-content">
+            <div class="list">
+                <div class="table-header">
+                    <p>Nom</p>
+                    <p>Résultat</p>
+                </div>
+                <div class="item" *ngFor="let player of this.bestPlayersInClassicMode; let i = index; let last = last">
+                    <p class="playerName">
+                        <svg
+                            *ngIf="i === 0"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#ffb404">
+                                    <path
+                                        d="M31.85482,18.83333l36.76546,73.54932c-13.23983,12.00625 -21.53695,29.3466 -21.53695,48.86735c0,36.725 29.19167,65.91667 65.91667,65.91667c36.725,0 65.91667,-29.19167 65.91667,-65.91667c0,-19.52075 -8.29711,-36.8611 -21.53694,-48.86735l36.76546,-73.54932h-52.89519l-28.25,56.5l-28.25,-56.5zM113,94.16667c26.36667,0 47.08333,20.71667 47.08333,47.08333c0,26.36667 -20.71667,47.08333 -47.08333,47.08333c-26.36667,0 -47.08333,-20.71667 -47.08333,-47.08333c0,-26.36667 20.71667,-47.08333 47.08333,-47.08333zM113,113c-0.94167,2.825 -5.65,11.29265 -14.125,11.29265v9.41667h10.35465v35.79069h12.24903h0.93798v-56.5z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg
+                            *ngIf="i === 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#D7D7D7">
+                                    <path
+                                        d="M31.85482,18.83333l36.76546,73.54932c-13.23983,12.00625 -21.53695,29.3466 -21.53695,48.86735c0,36.725 29.19167,65.91667 65.91667,65.91667c36.725,0 65.91667,-29.19167 65.91667,-65.91667c0,-19.52075 -8.29711,-36.8611 -21.53694,-48.86735l36.76546,-73.54932h-52.89519l-28.25,56.5l-28.25,-56.5zM113,94.16667c26.36667,0 47.08333,20.71667 47.08333,47.08333c0,26.36667 -20.71667,47.08333 -47.08333,47.08333c-26.36667,0 -47.08333,-20.71667 -47.08333,-47.08333c0,-26.36667 20.71667,-47.08333 47.08333,-47.08333zM113.44141,113c-16.70517,0 -19.45366,13.19275 -19.27474,18.83333h11.05355c0,-1.34658 1.27287,-9.41667 7.77979,-9.41667c6.24325,0 7.44873,4.92639 7.44873,7.39355c0,7.21317 -9.84998,13.90945 -26.28207,32.1307v7.55908l37.55631,-0.22071l-0.01839,-8.8833h-21.26106c15.1985,-15.57517 21.38981,-22.62192 21.38981,-31.65251c0,-6.45042 -3.62659,-15.74349 -18.39193,-15.74349z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg
+                            *ngIf="i === 2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#752100">
+                                    <path
+                                        d="M31.85482,18.83333l36.76546,73.54932c-13.23983,12.00625 -21.53695,29.3466 -21.53695,48.86735c0,36.725 29.19167,65.91667 65.91667,65.91667c36.725,0 65.91667,-29.19167 65.91667,-65.91667c0,-19.52075 -8.29711,-36.8611 -21.53694,-48.86735l36.76546,-73.54932h-52.89519l-28.25,56.5l-28.25,-56.5zM113,94.16667c26.36667,0 47.08333,20.71667 47.08333,47.08333c0,26.36667 -20.71667,47.08333 -47.08333,47.08333c-26.36667,0 -47.08333,-20.71667 -47.08333,-47.08333c0,-26.36667 20.71667,-47.08333 47.08333,-47.08333zM112.70573,113c-7.30733,0 -17.69303,4.09434 -17.69303,14.98942h10.70409c0,-1.695 1.12604,-6.19808 7.22804,-6.19808c1.23358,0 7.31998,0.4058 7.31998,7.02572c0,6.75175 -5.27907,7.57747 -8.00048,7.57747h-5.71989v8.53385h5.71989c1.356,0 8.84652,-0.34797 8.84652,8.22119c0,1.13 -0.47304,7.5223 -8.14762,7.5223c-6.47867,0 -8.21928,-5.02939 -7.90853,-7.02572h-10.7041c-0.54616,5.81008 4.29606,15.81706 18.35515,15.81706c7.84408,0 19.1276,-3.78403 19.1276,-16.14811c0,-8.63508 -6.00725,-11.7264 -9.04883,-12.83756c1.30892,-0.60267 8.18441,-4.15186 8.18441,-11.80762c0,-4.24692 -1.84052,-15.66992 -18.26318,-15.66992z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg
+                            *ngIf="i !== 0 && i !== 1 && i !== 2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#0F2347">
+                                    <path
+                                        d="M90.56185,12.74561l-11.09033,24.66357l-26.94417,2.2806l5.51758,26.44759l-20.47021,17.67464l20.02881,18.17122l-6.1613,26.33724l26.87061,2.92432l10.50179,24.93946l23.4681,-13.4445l23.13704,14.01465l11.09034,-24.66357l26.96256,-2.2806l-5.51757,-26.44759l20.47021,-17.67464l-20.02882,-18.17122l6.1613,-26.33724l-26.88899,-2.92432l-10.5018,-24.93945l-23.46809,13.4445zM160.08333,149.83903l-0.93798,0.09196l-6.54753,14.54802l-8.71777,19.40348l-18.18962,-11.01677l-13.6652,-8.25797l-13.83073,7.92692l-18.46549,10.55696l-8.25798,-19.60579l-5.55436,-13.18701v66.2845l47.08333,-23.54167l47.08333,23.54167z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        {{ player.playerName }}
+                    </p>
+                    <p class="playerScore">{{ player.score }} points</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="virtual-names" class="window">
+        <div class="fake-menu">
+            <div class="fake-buttons fake-close"></div>
+            <div class="fake-buttons fake-minimize"></div>
+            <div class="fake-buttons fake-zoom"></div>
+        </div>
+        <h2>
+            Mode LOG2990
+            <hr />
+        </h2>
+        <div class="window-content">
+            <div class="list">
+                <div class="table-header">
+                    <p>Nom</p>
+                    <p>Résultat</p>
+                </div>
+                <div class="item" *ngFor="let player of this.bestPlayersInLog2990Mode; let i = index; let last = last">
+                    <p class="playerName">
+                        <svg
+                            *ngIf="i === 0"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#ffb404">
+                                    <path
+                                        d="M31.85482,18.83333l36.76546,73.54932c-13.23983,12.00625 -21.53695,29.3466 -21.53695,48.86735c0,36.725 29.19167,65.91667 65.91667,65.91667c36.725,0 65.91667,-29.19167 65.91667,-65.91667c0,-19.52075 -8.29711,-36.8611 -21.53694,-48.86735l36.76546,-73.54932h-52.89519l-28.25,56.5l-28.25,-56.5zM113,94.16667c26.36667,0 47.08333,20.71667 47.08333,47.08333c0,26.36667 -20.71667,47.08333 -47.08333,47.08333c-26.36667,0 -47.08333,-20.71667 -47.08333,-47.08333c0,-26.36667 20.71667,-47.08333 47.08333,-47.08333zM113,113c-0.94167,2.825 -5.65,11.29265 -14.125,11.29265v9.41667h10.35465v35.79069h12.24903h0.93798v-56.5z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg
+                            *ngIf="i === 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#D7D7D7">
+                                    <path
+                                        d="M31.85482,18.83333l36.76546,73.54932c-13.23983,12.00625 -21.53695,29.3466 -21.53695,48.86735c0,36.725 29.19167,65.91667 65.91667,65.91667c36.725,0 65.91667,-29.19167 65.91667,-65.91667c0,-19.52075 -8.29711,-36.8611 -21.53694,-48.86735l36.76546,-73.54932h-52.89519l-28.25,56.5l-28.25,-56.5zM113,94.16667c26.36667,0 47.08333,20.71667 47.08333,47.08333c0,26.36667 -20.71667,47.08333 -47.08333,47.08333c-26.36667,0 -47.08333,-20.71667 -47.08333,-47.08333c0,-26.36667 20.71667,-47.08333 47.08333,-47.08333zM113.44141,113c-16.70517,0 -19.45366,13.19275 -19.27474,18.83333h11.05355c0,-1.34658 1.27287,-9.41667 7.77979,-9.41667c6.24325,0 7.44873,4.92639 7.44873,7.39355c0,7.21317 -9.84998,13.90945 -26.28207,32.1307v7.55908l37.55631,-0.22071l-0.01839,-8.8833h-21.26106c15.1985,-15.57517 21.38981,-22.62192 21.38981,-31.65251c0,-6.45042 -3.62659,-15.74349 -18.39193,-15.74349z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg
+                            *ngIf="i === 2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#752100">
+                                    <path
+                                        d="M31.85482,18.83333l36.76546,73.54932c-13.23983,12.00625 -21.53695,29.3466 -21.53695,48.86735c0,36.725 29.19167,65.91667 65.91667,65.91667c36.725,0 65.91667,-29.19167 65.91667,-65.91667c0,-19.52075 -8.29711,-36.8611 -21.53694,-48.86735l36.76546,-73.54932h-52.89519l-28.25,56.5l-28.25,-56.5zM113,94.16667c26.36667,0 47.08333,20.71667 47.08333,47.08333c0,26.36667 -20.71667,47.08333 -47.08333,47.08333c-26.36667,0 -47.08333,-20.71667 -47.08333,-47.08333c0,-26.36667 20.71667,-47.08333 47.08333,-47.08333zM112.70573,113c-7.30733,0 -17.69303,4.09434 -17.69303,14.98942h10.70409c0,-1.695 1.12604,-6.19808 7.22804,-6.19808c1.23358,0 7.31998,0.4058 7.31998,7.02572c0,6.75175 -5.27907,7.57747 -8.00048,7.57747h-5.71989v8.53385h5.71989c1.356,0 8.84652,-0.34797 8.84652,8.22119c0,1.13 -0.47304,7.5223 -8.14762,7.5223c-6.47867,0 -8.21928,-5.02939 -7.90853,-7.02572h-10.7041c-0.54616,5.81008 4.29606,15.81706 18.35515,15.81706c7.84408,0 19.1276,-3.78403 19.1276,-16.14811c0,-8.63508 -6.00725,-11.7264 -9.04883,-12.83756c1.30892,-0.60267 8.18441,-4.15186 8.18441,-11.80762c0,-4.24692 -1.84052,-15.66992 -18.26318,-15.66992z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg
+                            *ngIf="i !== 0 && i !== 1 && i !== 2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 226 226"
+                            class="fill"
+                        >
+                            <g
+                                fill="none"
+                                fill-rule="nonzero"
+                                stroke="none"
+                                stroke-width="1"
+                                stroke-linecap="butt"
+                                stroke-linejoin="miter"
+                                stroke-miterlimit="10"
+                                stroke-dasharray=""
+                                stroke-dashoffset="0"
+                                font-family="none"
+                                font-weight="none"
+                                font-size="none"
+                                text-anchor="none"
+                                class="mix"
+                            >
+                                <path d="M0,226v-226h226v226z" fill="none"></path>
+                                <g fill="#0F2347">
+                                    <path
+                                        d="M90.56185,12.74561l-11.09033,24.66357l-26.94417,2.2806l5.51758,26.44759l-20.47021,17.67464l20.02881,18.17122l-6.1613,26.33724l26.87061,2.92432l10.50179,24.93946l23.4681,-13.4445l23.13704,14.01465l11.09034,-24.66357l26.96256,-2.2806l-5.51757,-26.44759l20.47021,-17.67464l-20.02882,-18.17122l6.1613,-26.33724l-26.88899,-2.92432l-10.5018,-24.93945l-23.46809,13.4445zM160.08333,149.83903l-0.93798,0.09196l-6.54753,14.54802l-8.71777,19.40348l-18.18962,-11.01677l-13.6652,-8.25797l-13.83073,7.92692l-18.46549,10.55696l-8.25798,-19.60579l-5.55436,-13.18701v66.2845l47.08333,-23.54167l47.08333,23.54167z"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                        {{ player.playerName }}
+                    </p>
+                    <p class="playerScore">{{ player.score }} points</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div mat-dialog-actions>
+    <button class="close-button" mat-raised-button mat-dialog-close (click)="this.bestScoresDialogRef.close(true)" color="warn">Fermer</button>
+</div>
+<a class="icon-link" href="https://icons8.com/icon/6050/médaille-première-place">Icônes de médailles par Icons8</a>

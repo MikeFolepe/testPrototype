@@ -1,0 +1,17 @@
+<div id="easel" class="easel-container" (click)="onEaselClick()" (contextmenu)="onEaselClick()" tabindex="0" #easel>
+    <div
+        class="letter-container not-selectionnable"
+        *ngFor="let letter of letterEaselTab; let i = index"
+        [ngClass]="{ 'border-swap': letterEaselTab[i].isSelectedForSwap, 'border-manipulation': letterEaselTab[i].isSelectedForManipulation }"
+        (contextmenu)="onRightClick($event, i)"
+        (click)="onLeftClick($event, i)"
+    >
+        <h2 [style.font-size.px]="playerService.fontSize * 2">{{ letter.value }}</h2>
+        <p [style.font-size.px]="playerService.fontSize">{{ letter.points }}</p>
+    </div>
+</div>
+<div>
+    <button mat-raised-button color="primary" [disabled]="!isSwapButtonActive()" (click)="swap()">Échanger</button>
+    <br />
+    <button mat-raised-button color="primary" [disabled]="!isCancelButtonActive()" (click)="cancelSelection()">Annuler</button>
+</div>

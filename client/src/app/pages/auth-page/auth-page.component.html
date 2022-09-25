@@ -1,0 +1,96 @@
+<app-background></app-background>
+  <div class="login">
+      <img id="logo-scrabble" src="https://bit.ly/3m206ss" class="not-selectionnable" alt="Logo Scrabble" />
+      <!-- <div *ngIf ="hasAccount"> -->
+        <h2 class="login-header"></h2>
+        <form [formGroup]="authForm" class="login-container">
+
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.pseudonym.errors }">
+            <input type="text" placeholder="Pseudonyme" formControlName="pseudonym" (input)="onKeyPseudonym($event)">
+          </p>
+          <div *ngIf="isSubmitted && formControls.pseudonym.errors && notEmpty" class="help-block">
+            <div *ngIf="formControls.pseudonym.errors.required">Veuillez entrer un pseudonyme</div>
+          </div>
+          <div *ngIf="!validPseudonym" class="help-block">
+            <div>Le pseudonyme entré n'existe pas</div>
+          </div>
+
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.ipAddress.errors}">
+            <input type="text" placeholder="Adresse IP" formControlName="ipAddress" (input)="onKeyIpAddress($event)">
+          </p>
+          <div *ngIf="isSubmitted && formControls.ipAddress.errors && notEmpty" class="help-block">
+            <div *ngIf="formControls.ipAddress.errors.required">Veuillez entrer une adresse IP</div>
+          </div>
+          <div *ngIf="!validIpAddress" class="help-block">
+            <div>L'adresse IP entree n'existe pas</div>
+          </div>
+
+
+          <!-- <p [ngClass]="{ 'has-error': isSubmitted && formControls.pseudonym.errors }">
+            <input type="pseudonym" placeholder="Nom d'utilisateur" formControlName="pseudonym">
+          </p>
+          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+            <div *ngIf="formControls.email.errors.required">Veuillez entrer votre nom d'utilisateur</div>
+          </div>
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+            <input type="password" placeholder="Mot de passe" formControlName="password">
+          </p>
+          <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+            <div *ngIf="formControls.password.errors.required">Veuillez entrer votre mot de passe.</div>
+          </div> -->
+
+          <!-- <button class="forgottenPassword" (click)="test()">Mot de passe oublié?</button> -->
+
+          <div id = "buttons">
+
+                <input type="submit" value="Se Connecter" (click)="signIn()">
+                <!-- <button class="newAccount" (click)="createAccount()">Nouveau? Créer un compte.</button> -->
+          </div>
+        </form>
+      <!-- </div> -->
+         <div class="alert" *ngIf="authService.errorHandler.serverError.length">
+        {{ authService.errorHandler.serverError }}
+        </div>
+
+
+
+      <!-- <div *ngIf = "!hasAccount">
+
+        <h2 class="login-header"></h2>
+        <form [formGroup]="authForm" class="login-container">
+          <p>
+            <input type="file" placeholder="Photo de profil" formControlName="photo">
+
+
+
+          </p>
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+            <input type="email" placeholder="Nom d'utilisateur" formControlName="email">
+          </p>
+          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+            <div *ngIf="formControls.email.errors.required">Veuillez entrer votre nom d'utilisateur</div>
+          </div>
+
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+            <input type="email" placeholder="Adresse courriel" formControlName="email">
+          </p>
+
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+            <input type="password" placeholder="Mot de passe" formControlName="password">
+          </p>
+          <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+            <div *ngIf="formControls.password.errors.required">Veuillez entrer votre mot de passe.</div>
+          </div>
+
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+
+            <input type="password" placeholder="Veuillez confirmer votre mot de passe" formControlName="password2">
+
+          </p>
+
+          <div class = "createAccount">
+                <input type="submit" value="Créer un compte" (click)="signIn()">
+          </div>
+        </form>
+      </div> -->
+</div>

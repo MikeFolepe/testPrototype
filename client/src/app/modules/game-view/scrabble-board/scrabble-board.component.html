@@ -1,0 +1,5 @@
+<div class="container-canvas">
+    <canvas id="layer1" #gridCanvas [attr.width]="width" [attr.height]="height"></canvas>
+    <canvas id="layer2" #gridCanvasLettersLayer [attr.width]="width" [attr.height]="height"></canvas>
+    <canvas id="layer3" #gridCanvasPlacementLayer [attr.width]="width" [attr.height]="height" (click)="mouseHitDetect($event)"></canvas>
+</div>

@@ -1,0 +1,135 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00804d;
+    font-size: xx-large;
+}
+
+mat-icon {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    text-shadow: 0 0 0;
+}
+
+.fill {
+    fill: #000000;
+}
+
+.mix {
+    mix-blend-mode: normal;
+}
+
+::selection {
+    color: black;
+    background-color: white;
+}
+
+#typing {
+    width: 10ch;
+    animation: typing 2s steps(10), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 24px;
+    color: white;
+    height: 25px;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    height: 85%;
+    width: 100%;
+    margin-top: 1em;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    margin-bottom: 0px;
+    padding: 1em;
+    font-size: larger;
+}
+
+#dictionaries {
+    width: 48%;
+}
+
+#virtual-names {
+    width: 48%;
+}
+
+.window-content {
+    padding: 0 1em 1em;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0.25em;
+}
+
+.center {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.table-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    width: 100%;
+    align-items: center;
+}
+
+.item p {
+    margin: 0;
+}
+
+.item:hover {
+    border: 3px solid white;
+}
+
+.playerName {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 0.5em;
+}
+
+.icon-link {
+    text-align: center;
+    margin-left: 60vw;
+}
+
+.close-button {
+    font-size: 24px;
+    padding: 0.2em;
+    margin-left: 0.6vw;
+}

@@ -1,0 +1,83 @@
+#objectives-container {
+    display: flex;
+    flex-direction: column;
+    background-color: teal;
+    margin-top: 1em;
+    border-radius: 6px;
+    border-color: gray;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1em;
+    flex-grow: 1;
+    height: 40vh;
+}
+
+.objective {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5em;
+    background-color: tan;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    padding: 0.2em;
+    height: 10vh;
+}
+
+p {
+    color: teal;
+}
+
+h2 {
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin: -0.4em;
+}
+
+h3 {
+    color: black;
+    background-color: tan;
+    font-size: 16px;
+    border-radius: 6px;
+    width: 3.7em;
+    text-align: center;
+}
+
+.score {
+    font-size: 25px;
+    font-weight: bold;
+    color: teal;
+    margin-left: 0.3em;
+    margin-top: 0.5em;
+}
+
+.description {
+    font-size: 16px;
+    width: 70%;
+    text-align: left;
+}
+
+.checked {
+    content: '\2713';
+    color: green;
+    font-size: 50px;
+    margin: auto;
+}
+
+.timer {
+    font-size: 25px;
+    margin: auto;
+    margin-right: 0.5em;
+}
+
+.failed {
+    color: red;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.invisible {
+    opacity: 0;
+}

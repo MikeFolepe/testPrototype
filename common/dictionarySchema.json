@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "title": "Mon dictionnaire",
+            "description": "Description de base",
+            "words": [
+                "aa",
+                "aalenien",
+                "aalenienne",
+                "aaleniennes",
+                "aaleniens",
+                "aas"
+            ]
+        }
+    ],
+    "required": [
+        "title",
+        "description",
+        "words"
+    ],
+    "properties": {
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "The title schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Mon dictionnaire"
+            ]
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "The description schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Description de base"
+            ]
+        },
+        "words": {
+            "$id": "#/properties/words",
+            "default": [],
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                [
+                    "aa",
+                    "aalenien"
+                ]
+            ],
+            "minItems": 1,
+            "title": "Dictionary words",
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+                "$id": "#/properties/words/items",
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": true
+}

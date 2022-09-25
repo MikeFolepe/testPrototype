@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Abandon de la partie en cours!</h1>
+<div mat-dialog-content>
+    <mat-label>Êtes-vous sûr de vouloir quitter?</mat-label>
+</div>
+<br />
+<br />
+<br />
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="this.giveUpDialogRef.close(null)" color="warn">Non</button>
+    <button
+        mat-raised-button
+        mat-dialog-close
+        (click)="endGameService.clearAllData(); this.giveUpDialogRef.close(true)"
+        routerLink="/home"
+        color="warn"
+    >
+        Oui
+    </button>
+</div>

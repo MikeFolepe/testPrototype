@@ -1,0 +1,66 @@
+p {
+    color: #00856b;
+    position: relative;
+    float: right;
+}
+
+h2 {
+    color: #00856b;
+    font-size: 25px;
+    text-align: center;
+    margin: 0px 0 0px;
+}
+
+.easel-container {
+    height: 38em;
+    width: 6em;
+    background-color: teal;
+    border: 1em solid teal;
+    border-radius: 6px;
+}
+
+.letter-container {
+    height: 3.75em;
+    width: 3.75em;
+    background-color: tan;
+    border: 0.25em solid tan;
+    border-radius: 6px;
+    margin: 1em;
+    box-shadow: 4px 4px 8px -3px #000000;
+}
+
+.letter-container:hover {
+    height: 3.75em;
+    width: 3.75em;
+    background-color: tan;
+    border: 0.25em solid tan;
+    border-radius: 6px;
+    margin: 1em;
+    box-shadow: 2px 2px 4px -1px #000000;
+    transition: width 2s, height 2s, transform 2s;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.border-swap {
+    z-index: 1;
+    outline: 5px solid rgba(225, 140, 0, 0.884);
+    border-radius: 6px;
+}
+
+.border-manipulation {
+    z-index: 1;
+    outline: 5px solid rgba(98, 199, 233, 0.911);
+    border-radius: 6px;
+}
+
+button {
+    height: 3em;
+    width: 8em;
+    margin-top: 2em;
+    border-radius: 6px;
+}

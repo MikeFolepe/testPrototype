@@ -1,0 +1,27 @@
+.container {
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: teal;
+    width: 100%;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.button-container {
+    display: inline-block;
+    margin-top: 0.5em;
+}
+
+label {
+    font-size: 16px;
+    color: white;
+}
+
+input {
+    width: 1.25em;
+}
+
+button {
+    margin-left: 1em;
+}

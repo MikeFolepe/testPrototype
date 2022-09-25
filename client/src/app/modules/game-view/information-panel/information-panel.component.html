@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="fake-menu">
+        <div class="fake-buttons fake-close"></div>
+        <div class="fake-buttons fake-minimize"></div>
+        <div class="fake-buttons fake-zoom"></div>
+    </div>
+
+    <h2>Panneau d'information</h2>
+    <div id="players-list">
+        <p id="reserve-info">Nombres de lettres dans la réserve : {{ letterService.reserveSize }}</p>
+        <hr />
+        <div
+            *ngFor="let player of playerService.players"
+            [ngClass]="{ 'player-turn': skipTurnService.isTurn && player.id === 1, 'opponent-turn': !skipTurnService.isTurn && player.id === 2 }"
+        >
+            <p>
+                <span *ngIf="skipTurnService.isTurn && player.id === 1">></span>
+                <span *ngIf="!skipTurnService.isTurn && player.id === 2">></span>
+                Nom : {{ player.name }}
+            </p>
+
+            <p>Score : {{ player.score }}</p>
+            <p *ngIf="player.letterTable.length !== 7">Nombre de lettres sur le chevalet : {{ player.letterTable.length }}</p>
+
+            <div class="timer" *ngIf="skipTurnService.isTurn && player.id === 1">
+                Joueur actif<br />
+                Temps restant au tour : {{ skipTurnService.minutes }}:{{ displaySeconds() }}
+            </div>
+            <div class="timer" *ngIf="!skipTurnService.isTurn && player.id === 2">
+                Joueur actif<br />
+                Temps restant au tour : {{ skipTurnService.minutes }}:{{ displaySeconds() }}
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div *ngIf="endGameService.isEndGame">
+        La partie est terminée. Félicitations à {{ this.endGameService.getWinnerName() }} qui est le vainqueur!!
+    </div>
+</div>

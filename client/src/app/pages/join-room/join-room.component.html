@@ -1,0 +1,54 @@
+<app-background></app-background>
+<mat-card id="progress-bar-box" *ngIf="rooms.length === 0">
+    <p>En attente de création d'une partie</p>
+    <mat-spinner mode="indeterminate"></mat-spinner>
+</mat-card>
+<mat-paginator id="paginator" *ngIf="rooms.length !== 0" [length]="rooms.length" [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator>
+<div *ngIf="!shouldDisplayNameError && !shouldDisplayJoinError">
+    <div *ngFor="let room of rooms ? rooms.slice(roomItemIndex, roomItemIndex + pageSize) : []">
+        <mat-card class="card">
+            <mat-card-title>{{ room.gameSettings.playersNames[0] }} </mat-card-title>
+            <br />
+            <mat-card-subtitle>
+                Minute : {{ room.gameSettings.timeMinute }}
+                <br />
+                Second : {{ room.gameSettings.timeSecond }}
+                <br />
+                Bonus aléatoire : {{ room.gameSettings.randomBonus }}
+            </mat-card-subtitle>
+            <mat-card-actions>
+                <span>Statut : </span>
+                <span
+                    [ngClass]="{
+                        red: room.state === 0 || room.state === 2,
+
+                        green: room.state === 1
+                    }"
+                    >{{ computeRoomState(room.state) }}</span
+                >
+                <button mat-button color="primary" *ngIf=" room.state === 1" (click) = "join(room)">Joindre</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div *ngIf="shouldDisplayNameError">
+    <mat-card class="error-message"><span class="warning">Erreur</span> : Ce nom de joueur est déjà utilisé dans cette partie </mat-card>
+</div>
+
+<div *ngIf="shouldDisplayJoinError">
+    <mat-card class="error-message"><span class="warning">Erreur</span> : Cette partie n'existe plus ou vient d'être rejointe </mat-card>
+</div>
+
+<div id="buttons">
+    <button mat-raised-button routerLink="/home" color="warn">Retour</button>
+    <button
+        mat-raised-button
+        *ngIf="this.isRoomAvailable && !shouldDisplayNameError && !shouldDisplayJoinError"
+        color="primary"
+        (click)="placeRandomly()"
+        [disabled]="!this.isRandomButtonAvailable"
+    >
+        Placement aléatoire
+    </button>
+</div>

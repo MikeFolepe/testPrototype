@@ -1,0 +1,11 @@
+<app-background></app-background>
+
+<div id="information-box">{{ status }}</div>
+
+<mat-card id="progress-bar-box">
+    <mat-spinner *ngIf="isWaiting" mode="indeterminate"></mat-spinner>
+</mat-card>
+
+<button mat-raised-button id="submit-button" color="primary" (click)="routeToGameView()">Jouer contre le joueur virtuel</button>
+
+<button mat-raised-button color="warn" id="submit-button-1" (click)="deleteGame()" routerLink="/solo-game-ai">Annuler</button>

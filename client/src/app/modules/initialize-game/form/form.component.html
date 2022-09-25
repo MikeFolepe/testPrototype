@@ -1,0 +1,65 @@
+<app-background></app-background>
+<div class="centered" (keydown)="keyPressSubmit($event)">
+    <div id="logo-scrabble"><img src="https://bit.ly/3m206ss" width="400" height="80" class="img-title" alt="Logo Scrabble" /></div>
+    <div *ngIf="!this.form" class="loading">
+        <div class="container">
+            <p>Chargement...</p>
+            <div class="progress">
+                <div class="progress-value"></div>
+            </div>
+        </div>
+    </div>
+    <form id="main-form-box" *ngIf="this.form">
+        <fieldset>
+            <legend id="main-form-name">Paramètres de la partie</legend>
+            <fieldset *ngIf="!gameSettingsService.isRedirectedFromMultiplayerGame" class="form-section" id="player-name-box">
+                <legend>Informations du joueur</legend>
+                <app-player-name-field [formGroup]="form" [parentForm]="form"></app-player-name-field>
+            </fieldset>
+            <fieldset *ngIf="!gameSettingsService.isRedirectedFromMultiplayerGame" class="form-section">
+                <legend>Durée</legend>
+                <app-timer-field [formGroup]="form" [parentForm]="form"></app-timer-field>
+            </fieldset>
+            <fieldset *ngIf="gameSettingsService.isSoloMode" class="form-section">
+                <legend>Niveau du joueur virtuel</legend>
+                <app-level-field [formGroup]="form" [parentForm]="form"></app-level-field>
+            </fieldset>
+            <fieldset class="form-section">
+                <legend>Dictionnaire</legend>
+                <mat-form-field [formGroup]="form" appearance="fill">
+                    <mat-label>Dictionnaire</mat-label>
+                    <mat-select [formControlName]="'dictionaryInput'">
+                        <mat-option
+                            *ngFor="let dictionary of this.dictionaries"
+                            [value]="dictionary.title"
+                            (click)="selectGameDictionary(dictionary)"
+                        >
+                            {{ dictionary.title }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="selectedDictionary">{{ selectedDictionary.description }}.</div>
+            </fieldset>
+            <fieldset *ngIf="!gameSettingsService.isRedirectedFromMultiplayerGame" class="form-section">
+                <legend>Bonus aléatoire</legend>
+                <app-random-bonus [formGroup]="form" [parentForm]="form"></app-random-bonus>
+            </fieldset>
+        </fieldset>
+    </form>
+    <div class="buttons">
+        <button mat-raised-button *ngIf="this.form" routerLink="/home" id="back-button" color="warn">Retour</button>
+        <button
+            mat-raised-button
+            *ngIf="this.form"
+            (click)="initializeGame()"
+            id="submit-button"
+            color="primary"
+            [disabled]="!form.valid || isDictionaryDeleted"
+        >
+            Continuer
+        </button>
+    </div>
+    <mat-hint *ngIf="isDictionaryDeleted" class="warning">
+        Le dictionnaire {{ selectedDictionary.title }} a été supprimé. Veuillez en choisir un autre.
+    </mat-hint>
+</div>

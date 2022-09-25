@@ -1,0 +1,105 @@
+.container {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    display: flex;
+    height: 50vh;
+    padding: 0;
+    margin: 0;
+}
+
+.progress {
+    background: #fff;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 40px;
+    width: 500px;
+}
+
+.progress-value {
+    animation: load 0.4s normal forwards;
+    box-shadow: 0 10px 40px -10px green;
+    border-radius: 100px;
+    background: rgb(79, 182, 126);
+    background: linear-gradient(90deg, rgba(79, 182, 126, 1) 0%, rgba(79, 182, 126, 1) 10%, rgba(0, 128, 77, 1) 100%);
+    height: 30px;
+    width: 0;
+}
+
+@keyframes load {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    grid-gap: 1em;
+    gap: 1em;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-form-box {
+    margin-top: 10px;
+}
+
+#main-form-name {
+    text-align: center;
+    font-size: large;
+}
+
+#dictionaries {
+    margin-top: 10px;
+    width: 32%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submit-button {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#player-name-box {
+    height: 6.875rem;
+}
+
+.form-section {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.warning {
+    color: red;
+}
+
+.loading {
+    display: flex;
+    height: 50%;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto;
+}
